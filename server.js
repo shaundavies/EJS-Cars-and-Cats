@@ -29,6 +29,23 @@ app.get("/cars", (req, res) => {
 app.get("/cats", (req, res) => {
     res.render('cats');
 })
+var cats_arr = [
+    { name: "Garfield", age: "7", description: "A cat with lazyness" },
+    { name: "cuddles", age: "2", description: "A cat with cuteness" },
+    { name: "Sly", age: "5", description: "A cat with attitude" },
+];
+
+
+app.get("/cats1", (req, res) => {
+    res.render('./catsf/cat1', { cat: cats_arr });
+})
+app.get("/cats2", (req, res) => {
+    res.render('./catsf/cat2', { cat: cats_arr });
+})
+app.get("/cats3", (req, res) => {
+    res.render('./catsf/cat3', { cat: cats_arr });
+})
+
 
 app.get("/cars/new", (req, res) => {
     res.render('newCar');
